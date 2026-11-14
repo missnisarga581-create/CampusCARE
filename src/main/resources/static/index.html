@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Campus Complaint Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Homepage -->
+    <header>
+        <h1>CampusCare ✳</h1>
+        <p>Your campus. Your voice. Let's make it better!</p>
+    </header>
+
+    <main id="homePage">
+
+        <section class="welcome-section">
+            <h2>Welcome to CampusCare!</h2>
+            <p>A simple space to report campus issues and help make
+               our college a better place.</p>
+            <p>Choose your portal to continue.</p>
+        </section>
+
+        <div class="portal-container">
+
+            <section class="portal-card student-card">
+                <div class="portal-illustration">🎓</div>
+                <h2>Student Portal</h2>
+                <p>Have something that needs attention?
+                   Let the college know.</p>
+                <button id="studentPortalButton" type="button">
+                    Enter Student Portal →
+                </button>
+            </section>
+
+            <section class="portal-card admin-card">
+                <div class="portal-illustration">📋</div>
+                <h2>Admin Portal</h2>
+                <p>Review complaints, monitor issues and
+                   manage their progress.</p>
+                <button id="adminPortalButton" type="button">
+                    Enter Admin Portal →
+                </button>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Student Portal -->
+    <main id="studentPage" hidden>
+
+        <button class="back-button" id="studentBackButton" type="button">
+            ← Back to Home
+        </button>
+
+        <section class="welcome-section">
+            <h2>Student Corner 🎒</h2>
+            <p>Tell us what's happening around your campus.
+               Your feedback matters!</p>
+        </section>
+
+        <section class="form-section">
+            <h2>Submit a Complaint</h2>
+
+            <form id="complaintForm">
+
+                <input type="text" id="studentName"
+                       placeholder="Student Name" required>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option>Infrastructure</option>
+                    <option>Electrical</option>
+                    <option>Cleanliness</option>
+                    <option>Water Supply</option>
+                    <option>Other</option>
+                </select>
+
+                <select id="priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+
+                <label class="serious-option">
+                    <input type="checkbox" id="seriousIssue">
+                    Mark as a Serious Issue
+                </label>
+
+                <textarea id="description"
+                          placeholder="Describe your complaint"
+                          required></textarea>
+
+                <button type="submit">Submit Complaint ✉</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Admin Portal -->
+    <main id="adminPage" hidden>
+
+        <button class="back-button" id="adminBackButton" type="button">
+            ← Back to Home
+        </button>
+
+        <section class="welcome-section">
+            <h2>Admin Workspace 🗂️</h2>
+            <p>Here's an overview of the complaints received
+               from students.</p>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Dashboard Overview</h2>
+
+            <div class="dashboard-stats">
+
+                <div class="stat-card">
+                    <h3>Total Complaints</h3>
+                    <p id="totalCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <p id="pendingCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>In Progress</h3>
+                    <p id="progressCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Resolved</h3>
+                    <p id="resolvedCount">0</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="complaints-section">
+            <h2>Manage Complaints</h2>
+
+            <div class="filter-section">
+
+                <input type="text" id="searchInput"
+                       placeholder="Search complaints">
+
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Infrastructure">Infrastructure</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priorityFilter">
+                    <option value="">All Priorities</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+
+            </div>
+
+            <div id="complaintList"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

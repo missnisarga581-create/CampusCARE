@@ -1,0 +1,259 @@
+
+* {
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    margin: 0;
+    background: #f7f8fa;
+    color: #263247;
+    font-size: 17px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+header {
+    background: #ffffff;
+    padding: 32px 8%;
+    border-bottom: 1px solid #e5e8ed;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 38px;
+    color: #263d5b;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #68768a;
+    font-size: 18px;
+}
+
+main {
+    width: min(1100px, 90%);
+    margin: 45px auto;
+}
+
+.welcome-section {
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    background: #edf2f8;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+}
+
+.welcome-section h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #263d5b;
+}
+
+.welcome-section p {
+    margin: 7px 0;
+    color: #5f6d80;
+    line-height: 1.5;
+}
+
+.portal-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.portal-card {
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.portal-card:hover {
+    border-color: #8da5c1;
+    transform: translateY(-3px);
+}
+
+.portal-illustration {
+    font-size: 34px;
+    margin-bottom: 16px;
+}
+
+.portal-card h2 {
+    margin: 0 0 12px;
+    font-size: 25px;
+    color: #263d5b;
+}
+
+.portal-card p {
+    min-height: 48px;
+    color: #68768a;
+    line-height: 1.5;
+}
+
+button {
+    padding: 11px 20px;
+    background: #344e70;
+    color: #ffffff;
+    border: 1px solid #344e70;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #263d5b;
+}
+
+.back-button {
+    margin-bottom: 22px;
+    background: #ffffff;
+    color: #344e70;
+    border: 1px solid #cbd4df;
+}
+
+.back-button:hover {
+    background: #edf2f8;
+    color: #263d5b;
+}
+
+.form-section,
+.dashboard-section,
+.complaints-section {
+    padding: 28px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 25px;
+    color: #263d5b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccd3dd;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #263247;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #c9d8e9;
+    border-color: #7893b2;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.serious-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.serious-option input {
+    width: 17px;
+    height: 17px;
+    accent-color: #b75b54;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    padding: 20px;
+    border: 1px solid #e1e5eb;
+    border-radius: 7px;
+    background: #f8fafc;
+}
+
+.stat-card h3 {
+    margin: 0;
+    color: #68768a;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.stat-card p {
+    margin: 12px 0 0;
+    color: #263d5b;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.filter-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.complaint-card {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    border: 1px solid #dce2e9;
+    border-left: 4px solid #7893b2;
+    border-radius: 5px;
+}
+
+.complaint-card p {
+    margin: 8px 0;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.complaint-card select {
+    margin-top: 10px;
+}
+
+.complaint-card button {
+    margin-top: 10px;
+}
+
+@media (max-width: 750px) {
+    .portal-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-section {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 25px 5%;
+    }
+
+    main {
+        margin-top: 25px;
+    }
+}
