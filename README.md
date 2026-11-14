@@ -44,4 +44,3 @@ CampusCARE is a web-based application designed to simplify the process of submit
 ## Project Purpose
 
 CampusCARE aims to make campus complaint handling more organized, accessible, and efficient.
-
