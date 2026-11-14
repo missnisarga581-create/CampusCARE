@@ -1,0 +1,7 @@
+---
+- name: Deploy CampusCARE Application
+  hosts: campuscare
+  become: yes
+
+  roles:
+    - campuscare

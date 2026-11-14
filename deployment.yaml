@@ -1,0 +1,33 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campuscare
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: campuscare
+  template:
+    metadata:
+      labels:
+        app: campuscare
+    spec:
+      containers:
+        - name: campuscare
+          image: campuscare:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15

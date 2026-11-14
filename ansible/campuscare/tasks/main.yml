@@ -1,0 +1,33 @@
+---
+- name: Install Java 17
+  apt:
+    name: "{{ app_java_package }}"
+    state: present
+    update_cache: yes
+
+- name: Create CampusCARE installation directory
+  file:
+    path: "{{ app_install_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Copy CampusCARE application JAR
+  copy:
+    src: "{{ app_jar_source }}"
+    dest: "{{ app_jar_dest }}"
+    mode: '0644'
+  notify: Restart CampusCARE
+
+- name: Install CampusCARE systemd service
+  template:
+    src: campuscare.service.j2
+    dest: /etc/systemd/system/campuscare.service
+    mode: '0644'
+  notify: Restart CampusCARE
+
+- name: Enable and start CampusCARE service
+  systemd:
+    name: "{{ app_service_name }}"
+    enabled: yes
+    state: started
+    daemon_reload: yes

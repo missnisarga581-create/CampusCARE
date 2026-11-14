@@ -1,0 +1,7 @@
+---
+app_name: CampusCARE
+app_service_name: campuscare
+app_jar_source: "/mnt/c/Users/Nisarga N/OneDrive/Documents/CampusCARE/CampusCARE/target/CampusCARE-0.0.1-SNAPSHOT.jar"
+app_install_dir: /opt/campuscare
+app_jar_dest: /opt/campuscare/CampusCARE.jar
+app_java_package: openjdk-17-jre-headless
